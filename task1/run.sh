@@ -5,7 +5,7 @@ CURR_LOCATION=$(pwd)
 mkdir $(pwd)/$3
 DESTINATION=${CURR_LOCATION}/$3
 
-FILE_LIST=$(find $1 -iname "*.$2")
+FILE_LIST=$(find $1 -name "*.$2")
 
 for file in ${FILE_LIST}
 do
