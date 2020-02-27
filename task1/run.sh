@@ -13,7 +13,7 @@ for file in ${FILE_LIST}
 do
   TARGET_NAME=$(basename "$file")
 
-  while [[ -e ${DESTINATION}/$counter"$TARGET_NAME" ]]
+  while [[ -e ${DESTINATION}/"$TARGET_NAME" ]]
   do
     let counter++
     TARGET_NAME=$counter"$TARGET_NAME"
