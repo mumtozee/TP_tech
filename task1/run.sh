@@ -7,11 +7,11 @@ DESTINATION=${CURR_LOCATION}/$3
 
 FILE_LIST=$(find $1 -name "*.$2")
 
+counter=""
+
 for file in ${FILE_LIST}
 do
   TARGET_NAME=$(basename "$file")
-
-  counter=""
 
   while [[ -e ${DESTINATION}/$counter"$TARGET_NAME" ]]
   do
