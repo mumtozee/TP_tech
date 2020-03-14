@@ -3,7 +3,10 @@ import sys
 code = """#ifndef INDEX_H
 #define INDEX_H
 
-bool index_f();
+template<class T>
+bool index_f(T args) {
+    return args == 0;
+}
 
 #endif // end INDEX_H
 """
