@@ -1,7 +1,7 @@
 #include "main.h"
 
 int main() {
-  if (lib_f() && index_f()) {
+  if (lib_f() && index_f(0)) {
     return 0;
   }
 
