@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 
 TEST(TestIndex, IsTrue) {
-  EXPECT_TRUE(index_f());
+  EXPECT_TRUE(index_f(0));
 }
 
 TEST(TestMainLib, IsLibTrue) {
