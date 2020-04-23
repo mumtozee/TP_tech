@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [ master, task4 ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: |
+        mkdir 3rdparty
+        mkdir build
+        mkdir output
+        MAIN_DIR=$(pwd)
+        echo ${MAIN_DIR}
+        cd 3rdparty
+        git clone https://github.com/google/googletest.git
+        cd ../build
+        cmake -DGOOGLE_TEST_DIR=googletest -DORIGIN=$(pwd) -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
+        make
+        make install
+    
+    
+    - name: Test
+      
