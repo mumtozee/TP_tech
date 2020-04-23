@@ -37,8 +37,8 @@ jobs:
     
     - name: UploadArtifacts
       run: |
-        cd task4
-        tar -zcf Distributive.tar.gz bin/ lib/
+        cd task4/output/exe/
+        tar -zcf ../../Distributive.tar.gz bin/ lib/
 
     - uses: actions/upload-artifact@v1
       with:
