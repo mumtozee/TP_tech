@@ -28,7 +28,7 @@ jobs:
       with:
         exec-path: /home/runner/work/TP_tech/TP_tech/task4/bin/CTestExe
         report-path: /home/runner/work/TP_tech/TP_tech/task4/test-report.xml
-        working-directory: /home/runner/work/TP_tech/TP_tech/task4/bin
+        working-directory: task4/
 
     - name: Test
       run: |
