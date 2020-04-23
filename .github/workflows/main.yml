@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: |
+        cd task4
         mkdir 3rdparty
         mkdir build
         mkdir output
@@ -23,4 +24,11 @@ jobs:
         cmake -DGOOGLE_TEST_DIR=googletest -DORIGIN=$(pwd) -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
         make
         make install
-      
+        
+    - name: Test
+      uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+      with:
+        exec-path: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/bin/CTestExe
+        report-path: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/test-report.tar.gz
+        working-directory: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/bin
+        
