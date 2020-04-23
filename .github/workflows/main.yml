@@ -40,7 +40,7 @@ jobs:
         cd task4
         tar -zcf Distributive.tar.gz bin/ lib/
 
-    - uses: action/upload-artifact@v1
+    - uses: actions/upload-artifact@v1
       with:
         name: Distributive
         path: Distributive.tar.gz
