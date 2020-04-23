@@ -20,7 +20,7 @@ jobs:
         MAIN_DIR=$(pwd)
         echo ${MAIN_DIR}
         cd build
-        cmake -DGOOGLE_TEST_DIR=googletest -DORIGIN=$(pwd) -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
+        GOOGLE_TEST_DIR=googletest cmake -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
         make
         make install
         
