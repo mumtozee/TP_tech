@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Build
       run: |
         mkdir 3rdparty
@@ -24,7 +23,4 @@ jobs:
         cmake -DGOOGLE_TEST_DIR=googletest -DORIGIN=$(pwd) -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
         make
         make install
-    
-    
-    - name: Test
       
