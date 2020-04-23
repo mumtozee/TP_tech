@@ -23,15 +23,16 @@ jobs:
         GOOGLE_TEST_DIR=googletest cmake -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
         make
         make install
-    
-    
+
     - uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
         exec-path: /home/runner/work/TP_tech/TP_tech/task4/bin/CTestExe
         report-path: /home/runner/work/TP_tech/TP_tech/task4/test-report.xml
-        working-directory: /home/runner/work/TP_tech/TP_tech/task4
+        working-directory: /home/runner/work/TP_tech/TP_tech/task4/bin
+
     - name: Test
       run: |
+        cd task4
         tar -zcf test-report.tar.gz test-report.xml
 
         
