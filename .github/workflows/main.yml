@@ -34,5 +34,15 @@ jobs:
       run: |
         cd task4
         tar -zcf test-report.tar.gz test-report.xml
+    
+    - name: UploadArtifacts
+      run: |
+        cd task4
+        tar -zcf Distributive.tar.gz bin/ lib/
+
+    - uses: action/upload-artifact@v1
+      with:
+        name: Distributive
+        path: Distributive.tar.gz
 
         
