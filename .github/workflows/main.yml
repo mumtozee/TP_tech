@@ -13,13 +13,12 @@ jobs:
     - name: Build
       run: |
         cd task4
-        mkdir 3rdparty
+        git clone https://github.com/google/googletest.git
+        mv googletest 3rdparty
         mkdir build
         mkdir output
         MAIN_DIR=$(pwd)
         echo ${MAIN_DIR}
-        cd 3rdparty
-        git clone https://github.com/google/googletest.git
         cd ../build
         cmake -DGOOGLE_TEST_DIR=googletest -DORIGIN=$(pwd) -DCMAKE_INSTALL_PREFIX=${MAIN_DIR}/output ..
         make
@@ -28,7 +27,7 @@ jobs:
     - name: Test
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
-        exec-path: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/bin/CTestExe
-        report-path: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/test-report.tar.gz
-        working-directory: /home/runner/work/MIPT_Design_Patterns_Assignments/MIPT_Design_Patterns_Assignments/task4/bin
+        exec-path: /home/runner/work/TP_tech/TP_tech/task4/bin/CTestExe
+        report-path: /home/runner/work/TP_tech/TP_tech/task4/test-report.tar.gz
+        working-directory: /home/runner/work/TP_tech/TP_tech/task4/bin
         
