@@ -43,6 +43,6 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Distributive
-        path: Distributive.tar.gz
+        path: task4/Distributive.tar.gz
 
         
